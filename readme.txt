@@ -1,3 +1,5 @@
+Ticket booking django app
+
 1. Open the Django shell:
 python manage.py shell
 
