@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'dashboard.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard_styles.css' %}">
+</head>
+</head>
+<body>
+    <h1>{{ movie.title }}</h1>
+    <p>Language: {{ movie.language }}</p>
+    <p>Description: {{ movie.description }}</p>
+    <p>Release Date: {{ movie.release_date }}</p>
+    <p>Duration: {{ movie.duration }} minutes</p>
+    
+    <h3>Select Show Timing:</h3>
+    <ul>
+        {% for show_timing in show_timings %}
+            <li><a href="{% url 'booking' show_timing.id %}">{{ show_timing.date }} - {{ show_timing.time }}</a>
+                
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

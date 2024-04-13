@@ -1,0 +1,13 @@
+{% include 'dashboard.html' %}
+
+{% block content %}
+    <h1>Booking History</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.show_timing.movie.title }} - Date: {{ booking.show_timing.date }} - Time: {{ booking.show_timing.time }}
+            </li>
+        {% empty %}
+            <li>No bookings found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
